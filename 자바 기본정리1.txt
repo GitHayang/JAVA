@@ -1,0 +1,46 @@
+java: 객체 지향 언어
+그외 절차 지향이라는 말이 있는데 대표적으로 c언어 인터프린터 방식
+
+java의 특징
+1 객체 지향 언어
+2 프로그램이 쉽다
+
+eclipse는 버전에 따라 여러가지를 설치할 수 있다.
+Eclipse IDE for Enterprise Java and Web Developers 로 다운
+
+java는 파일명과 class명이 같아야 실행이 된다.
+class안에 객체를 만드는데 이것을 속성이라하고, 행동을 method라 한다.
+class안에 method가 필요하고 그것을 main method라 한다.
+
+public의 의미는 아무데서나 접근이 가능하다.
+static 프로그램 실행전에 미리 메모리를 올려두고, 컴퓨터가 끝나기 전에는 내리지 않아서 실행속도를 떨어트리지 않는다.
+void 리턴하지 않는다. 즉 실행하고 끝내라
+main 클래스 내 실행 시 main 먼저 실행
+
+변수 
+앞자리에 자료형, 뒷자리에 문자(영문자, 숫자, 특수문자($,_)만 허용 / 단, 숫자가 맨 앞에 올 수 없다.)
+
+		
+자료형 
+정수형(long, int, short, byte)
+실수형(double, float)
+문자형(char)
+문자열형(String)-대문자 / null(존재하지 않는 값이 존재한다.)
+논리형(boolean)
+
+
+정수형
+long - 최대 8byte 2의 64승 +-범위로(17자리)
+int - 4byte(기본 / 9자리)
+short - 2byte
+byte - 1byte (2의 8승 +- -128~+128)
+
+
+
+
+
+
+
+
+
+
