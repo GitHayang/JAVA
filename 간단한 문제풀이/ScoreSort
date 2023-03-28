@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+public class ScoreSort {
+	public static void main(String[] args) {
+
+		String name[] = { "A", "B", "C", "D", "E" };
+		int kor[] = { 50, 60, 70, 80, 90 };
+		int eng[] = { 10, 70, 80, 90, 100 };
+		int math[] = { 95, 80, 90, 85, 80 };
+		int sum[] = new int[name.length];
+
+		for (int i = 0; i < name.length; i++) { // 각각의 이름별 점수 합계
+			sum[i] = kor[i] + eng[i] + math[i];
+			System.out.println(name[i]+"("+sum[i]+")");
+		}
+		System.out.println("--------------------------");
+		
+		// 내림차순 구현부분
+		int temp=0;
+		String swap="0";
+		int target =0;
+		for (int i = 0; i < name.length; i++) {
+			for (int j = i+1; j < name.length; j++) {
+				temp=sum[j];
+				sum[j]=sum[i];
+				sum[i]=temp;
+				
+				// 점수 순서에 따라 이름도 따라간다.
+				swap=name[j];
+				name[j]=name[i];
+				name[i]=swap;
+			}
+			System.out.println(name[i]+"("+sum[i]+")");
+		}
+
+	}
+}
