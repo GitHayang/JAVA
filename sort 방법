@@ -1,0 +1,59 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class ArraySort {
+	public static void main(String[] args) {
+
+		//숫자일때만 쓸 수 있다
+		int[] arr = { 12, 43, 5, 4, 100, 88 };
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
+
+		Integer[] arr2 = new Integer[arr.length];
+		for (int i = 0; i < arr2.length; i++) {
+			arr2[i] = arr[i];
+		}
+		Arrays.sort(arr2, Collections.reverseOrder());
+		System.out.println(Arrays.toString(arr2));
+
+		
+		//숫자 이외일때 사용하기 위해서 존재한다.
+		//1유형
+		myComprareClass mcc = new myComprareClass();
+		Arrays.sort(arr2, mcc);
+		System.out.println(Arrays.toString(arr2));
+
+		//2유형
+		//객체화 이후에 바꿔쓴다. 
+		Comparator<Integer> mycc = new Comparator<Integer>() {
+			public int compare(Integer a, Integer b) {
+				return b-a;
+			}
+		};
+		Arrays.sort(arr2, mycc);
+		System.out.println(Arrays.toString(arr2));
+		
+		//3유형
+		Arrays.sort(arr2,new Comparator<Integer>(){
+			public int compare(Integer i1, Integer i2) {
+				return i1 - i2;
+			}
+		});
+		System.out.println(Arrays.toString(arr2));
+		
+		//4유형
+		Arrays.sort(arr2,(a,b)->{
+			return b-a;
+		});
+		System.out.println(Arrays.toString(arr2));
+		
+	}
+}
+
+class myComprareClass implements Comparator<Integer> {
+	public int compare(Integer a, Integer b) {
+		return a - b;
+	}
+}
