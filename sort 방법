@@ -19,13 +19,14 @@ public class ArraySort {
 		System.out.println(Arrays.toString(arr2));
 
 		
-		//숫자 이외일때 사용하기 위해서 존재한다.
-		//1유형
+		// 숫자 이외일때 사용하기 위해서 존재한다.
+		// 배열이 int [] a 형태가 아닌 Integer a [] 형태여야한다.
+		// 1유형
 		myComprareClass mcc = new myComprareClass();
 		Arrays.sort(arr2, mcc);
 		System.out.println(Arrays.toString(arr2));
 
-		//2유형
+		// 2유형
 		//객체화 이후에 바꿔쓴다. 
 		Comparator<Integer> mycc = new Comparator<Integer>() {
 			public int compare(Integer a, Integer b) {
@@ -35,7 +36,7 @@ public class ArraySort {
 		Arrays.sort(arr2, mycc);
 		System.out.println(Arrays.toString(arr2));
 		
-		//3유형
+		// 3유형
 		Arrays.sort(arr2,new Comparator<Integer>(){
 			public int compare(Integer i1, Integer i2) {
 				return i1 - i2;
@@ -43,7 +44,7 @@ public class ArraySort {
 		});
 		System.out.println(Arrays.toString(arr2));
 		
-		//4유형
+		// 4유형
 		Arrays.sort(arr2,(a,b)->{
 			return b-a;
 		});
