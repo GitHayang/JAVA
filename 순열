@@ -1,0 +1,43 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Permutation {
+
+	static void generatePermutations(char[] arr, int size, char[] branch, int level, boolean[] visited) {
+		if (level >= size - 1) {
+			System.out.println(branch);
+      // 숫자로 나타낸다.
+			System.out.println(Arrays.toString(branch));
+      // 리스트로 나타낸다.
+			return;
+		}
+
+		for (int i = 0; i < size; i++) {
+			if (!visited[i]) {
+				branch[++level] = arr[i];
+				visited[i] = true;
+				generatePermutations(arr, size, branch, level, visited);
+				visited[i] = false;
+				level--;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+// 1~9까지 입력받아서 순열은 나타낸다.
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt(); // 1~9
+
+		char arr[] = new char[n];
+
+		for (int i = 0; i < n; i++) {
+			arr[i] = Character.forDigit(i + 1, 10);
+		}
+		char[] branch = new char[n];
+		boolean[] visited = new boolean[n];
+		
+
+		generatePermutations(arr, n, branch, -1, visited);
+//		char[] arr, int size, char[] branch, int level, boolean[] visited
+	}
+}
