@@ -27,7 +27,8 @@ public class Main2 {
 			}
 
 		}
-
+		
+		//이부분에서 못읽는 부분이 있는것 같다
 		int count = 0;
 		for (int i = 1; i < arr.length-1; i++) {
 			for (int j = 1; j < arr.length-1; j++) {
